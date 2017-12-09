@@ -38,6 +38,29 @@ def check_messages():
     return statement(speech)
 
 
+@ask.intent('RecordMessageIntent')
+def record_message():
+    speech = '<speak>Starting recording.  How was your day?   <break time="3s"/> </speak>'
+    return question(speech)
+
+
+@ask.intent('EndMessageIntent')
+def end_recording():
+    speech = 'Recording saved.  Would you like me to send it to the community?'
+    prompt = "I didn't catch that.  Should I send your message?"
+    return question(speech).reprompt(prompt)
+
+@ask.intent('AMAZON.YesIntent')
+def end_recording():
+    speech = 'Recording sent.'
+    return statement(speech)
+
+
+@ask.intent('AMAZON.NoIntent')
+def end_recording():
+    speech = 'Message not sent.  Recording deleted.'
+    return statement(speech)
+
 # @ask.intent('ListenMessageIntent')
 # def listen_to_(user):
 #     speech = "{{user}} from Munich says,"

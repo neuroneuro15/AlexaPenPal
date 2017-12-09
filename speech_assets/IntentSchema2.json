@@ -10,6 +10,10 @@
         "samples": []
       },
       {
+        "name": "AMAZON.NoIntent",
+        "samples": []
+      },
+      {
         "name": "AMAZON.PauseIntent",
         "samples": []
       },
@@ -22,13 +26,8 @@
         "samples": []
       },
       {
-        "name": "CheckMessagesIntent",
-        "samples": [
-          "check my messages",
-          "check my inbox",
-          "how many messages do I have?"
-        ],
-        "slots": []
+        "name": "AMAZON.YesIntent",
+        "samples": []
       },
       {
         "name": "BrowseRandomIntent",
@@ -37,6 +36,33 @@
           "hear a random message",
           "play a random message",
           "listen to someone's day"
+        ],
+        "slots": []
+      },
+      {
+        "name": "CheckMessagesIntent",
+        "samples": [
+          "check my messages",
+          "check my inbox",
+          "how many messages do I have"
+        ],
+        "slots": []
+      },
+      {
+        "name": "EndMessageIntent",
+        "samples": [
+          "end recording",
+          "okay that is all",
+          "okay that is it"
+        ],
+        "slots": []
+      },
+      {
+        "name": "RecordMessageIntent",
+        "samples": [
+          "record a message",
+          "let me tell you about my day",
+          "today was interesting"
         ],
         "slots": []
       }
