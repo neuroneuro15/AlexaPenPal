@@ -1,7 +1,7 @@
 import logging
 import os
-
-from flask import Flask, json, render_template
+from os import path
+from flask import Flask, json, render_template, send_file
 from flask_ask import Ask, request, session, question, statement, context, audio, current_stream
 
 app = Flask(__name__)
@@ -12,25 +12,28 @@ logging.getLogger('flask_ask').setLevel(logging.INFO)
 
 @ask.launch
 def launch():
-    card_title = 'Audio Example'
+    card_title = 'Message in a Bottle'
     text = 'Hi Anna! How are you doing?'
-    prompt = 'You can ask to begin demo, or try asking me to play the sax.'
+    prompt = 'You can ask to record a message, hear a random message, or check your inbox.'
     return question(text).reprompt(prompt).simple_card(card_title, text)
 
-
-@ask.intent('BrowseRandomIntent')
-def listen_to_random():
-    speech = "John from Munich says,"
-    stream_url = 'https://www.vintagecomputermusic.com/mp3/s2t9_Computer_Speech_Demonstration.mp3'
-    return audio(speech).play(stream_url, offset=93000)
-
-
-@ask.intent('PlayNickIntent')
-def listen_to_nick():
-    speech = "Nick from Munich says,"
-    stream_url = 'https://www.vintagecomputermusic.com/mp3/s2t9_Computer_Speech_Demonstration.mp3'
-    return audio(speech).play(stream_url, offset=93000)
-
+#
+# @app.route('/hear/random')
+# def view_method():
+#      path_to_file = "recordings/nicktest2.mp3"
+#
+#      return send_file(
+#          path_to_file,
+#          mimetype="audio/mp3",
+#          as_attachment=True,
+#          attachment_filename=path.basename(path_to_file))
+#
+#
+# @ask.intent('BrowseRandomIntent')
+# def listen_to_random():
+#     speech = "John from Munich says,"
+#     stream_url = 'https://d6143fb0.ngrok.io/hear/random'
+#     return audio(speech).play(stream_url, offset=93000)
 
 # 'ask audio_skil Play the sax
 @ask.intent('CheckMessagesIntent')
@@ -39,11 +42,18 @@ def check_messages():
     return statement(speech)
 
 
-@ask.intent('ReplyIntent')
-def reply_to_message():
-    speech = 'yeah you got it! This is an audio stream from a web server.'
-    stream_url = 'https://ia800203.us.archive.org/27/items/CarelessWhisper_435/CarelessWhisper.ogg'
-    return audio(speech).play(stream_url)
+# @ask.intent('ListenMessageIntent')
+# def listen_to_(user):
+#     speech = "{{user}} from Munich says,"
+#     stream_url = 'https://d6143fb0.ngrok.io/hear/random'
+#     return audio(speech).play(stream_url, offset=93000)
+#
+#
+# @ask.intent('ReplyIntent')
+# def reply_to_message():
+#     speech = 'yeah you got it! This is an audio stream from a web server.'
+#     stream_url = 'https://ia800203.us.archive.org/27/items/CarelessWhisper_435/CarelessWhisper.ogg'
+#     return audio(speech).play(stream_url)
 
 
 @ask.intent('AMAZON.PauseIntent')

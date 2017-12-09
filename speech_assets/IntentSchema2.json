@@ -22,26 +22,11 @@
         "samples": []
       },
       {
-        "name": "BrowseRandomIntent",
-        "samples": [
-          "let me listen to a stranger",
-          "play a random message",
-        ],
-        "slots": []
-      },
-      {
         "name": "CheckMessagesIntent",
         "samples": [
-          "do I have any messages",
-          "check my messages"
-        ],
-        "slots": []
-      },
-      {
-        "name": "ReplyIntent",
-        "samples": [
-          "send a reply",
-          "record a reply"
+          "check my messages",
+          "check my inbox",
+          "how many messages do I have?"
         ],
         "slots": []
       }
