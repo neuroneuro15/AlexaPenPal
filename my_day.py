@@ -17,23 +17,19 @@ def launch():
     prompt = 'You can ask to record a message, hear a random message, or check your inbox.'
     return question(text).reprompt(prompt).simple_card(card_title, text)
 
-#
-# @app.route('/hear/random')
-# def view_method():
-#      path_to_file = "recordings/nicktest2.mp3"
-#
-#      return send_file(
-#          path_to_file,
-#          mimetype="audio/mp3",
-#          as_attachment=True,
-#          attachment_filename=path.basename(path_to_file))
-#
-#
-# @ask.intent('BrowseRandomIntent')
-# def listen_to_random():
-#     speech = "John from Munich says,"
-#     stream_url = 'https://d6143fb0.ngrok.io/hear/random'
-#     return audio(speech).play(stream_url, offset=93000)
+
+@app.route('/hear/random')
+def view_method():
+     path_to_file = "recordings/nicktest2.mp3"
+     return send_file(path_to_file, mimetype="audio/mp3", as_attachment=True, attachment_filename='random.mp3')
+
+
+@ask.intent('BrowseRandomIntent')
+def listen_to_random():
+    speech = "Nick from Munich says,"
+    stream_url = 'https://d6143fb0.ngrok.io/hear/random'
+    return audio(speech).play(stream_url)
+
 
 # 'ask audio_skil Play the sax
 @ask.intent('CheckMessagesIntent')

@@ -29,6 +29,16 @@
           "how many messages do I have?"
         ],
         "slots": []
+      },
+      {
+        "name": "BrowseRandomIntent",
+        "samples": [
+          "listen to a stranger",
+          "hear a random message",
+          "play a random message",
+          "listen to someone's day"
+        ],
+        "slots": []
       }
     ],
     "invocationName": "my day"
