@@ -1,0 +1,28 @@
+DemoIntent let's go
+DemoIntent play my song
+SaxIntent play the sax
+SaxIntent play sax
+I want to talk with someone
+Would yo like to a stranger or a friend?
+I would like to talk to a stranger
+Found a message from John.
+Send a message to John.
+Message sent.
+I would love to send a message to a stranger.
+Great!  I'm listening.  How was your day?
+Message sent.
+Do I have any mails?
+Yes, you have one reply from yesterday's message.
+Play the reply.
+Please send a reply to Samantha.
+Message sent.
+Alexa, any messages?
+Anything else in my mailbox?
+You have two replies from friends, one from John and one from Samantha.
+I would like to hear the message from John
+Playing John's message
+Play messsage from Samantha
+Send message to Samantha.
+Please send my Whatsapp number to Samantha.
+
+
