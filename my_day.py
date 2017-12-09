@@ -13,7 +13,7 @@ logging.getLogger('flask_ask').setLevel(logging.INFO)
 @ask.launch
 def launch():
     card_title = 'Message in a Bottle'
-    text = 'Hi Anna! How are you doing?'
+    text = 'Hi Anna! What would you like to do?'
     prompt = 'You can ask to record a message, hear a random message, or check your inbox.'
     return question(text).reprompt(prompt).simple_card(card_title, text)
 
@@ -40,13 +40,13 @@ def check_messages():
 
 @ask.intent('RecordMessageIntent')
 def record_message():
-    speech = '<speak>Starting recording.  How was your day?   <break time="3s"/> </speak>'
+    speech = '<speak>Great!  Starting recording.<break time="3s"/> </speak>'
     return question(speech)
 
 
 @ask.intent('EndMessageIntent')
 def end_recording():
-    speech = 'Recording saved.  Would you like me to send it to the community?'
+    speech = 'Your message is recorded. Would you like me to send it to the community?'
     prompt = "I didn't catch that.  Should I send your message?"
     return question(speech).reprompt(prompt)
 

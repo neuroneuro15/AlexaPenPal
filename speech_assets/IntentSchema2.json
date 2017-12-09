@@ -35,7 +35,11 @@
           "listen to a stranger",
           "hear a random message",
           "play a random message",
-          "listen to someone's day"
+          "listen to someone's day",
+          "I would love to talk to someone new",
+          "listen to someone new",
+          "make a new friend",
+          "find a new friend"
         ],
         "slots": []
       },
@@ -44,7 +48,12 @@
         "samples": [
           "check my messages",
           "check my inbox",
-          "how many messages do I have"
+          "how many messages do I have",
+          "I'd like to hear from my friends",
+          "I would like to check my messages",
+          "I want to hear from my friends",
+          "Do I have any messages from Nick",
+          "Do I have a message from Nick"
         ],
         "slots": []
       },
@@ -58,11 +67,34 @@
         "slots": []
       },
       {
+        "name": "PlayMessageIntent",
+        "samples": [
+          "Play the message please",
+          "Play Nick's message",
+          "Play the message from nick"
+        ],
+        "slots": []
+      },
+      {
         "name": "RecordMessageIntent",
         "samples": [
           "record a message",
-          "let me tell you about my day",
-          "today was interesting"
+          "please record a reply",
+          "send a reply",
+          "reply to Nick",
+          "reply to Samantha",
+          "Send a message to Nick",
+          "Send a message to Samantha"
+        ],
+        "slots": []
+      },
+      {
+        "name": "SendContactIntent",
+        "samples": [
+          "please send my contact number",
+          "send my contact info to Nick",
+          "send my contact info",
+          "send Nick my phone number"
         ],
         "slots": []
       }
